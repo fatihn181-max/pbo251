@@ -1,24 +1,17 @@
 <?php
 
-//panggil file propertyconstant
-require("./propertyconstant.php");
+require('./PropertyConstant.php');
 
-use fatih\Marketplace\produk;
+use fatih\Marketplace\Produk;
 
 //object
-$produk = new produk("PRD001", "laptop", 10000000, 5);
-//$produk->kode="PRD001";
-//$produk->nama="laptop";
-//$produk->harga=10000000;
-//$produk->stok=5;
+$produk = new Produk();
 
-echo "nama produk : ".$produk->nama;
-echo "<br/>";
-echo "harga :".$produk->harga;
-echo "<br/>";
-echo "stok:". $produk->stok;
-echo "<br/>";
-echo "pajak:". $produk->pajak() . "%";
-echo "<br/>";
-echo"<br/>";
-echo "total harga setelah pajak: Rp. ".$produk->total();
+$produk->setKode('P0001')->setNama('Laptop')->setHarga('10000000')->setstok(5);
+
+
+echo "Produk : ",$produk->getNama(), "<br>";
+echo "Harga : Rp.", $produk->getHarga(), "<br>";
+echo "Stok : ", $produk->getStok(), "<br>";
+echo "Pajak : ", $produk->pajak(), "% <br> <br> ";
+echo "Total setelah  harga pajak : Rp.", $produk->total(), "<br>";
