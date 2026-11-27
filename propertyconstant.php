@@ -2,7 +2,7 @@
 
 namespace fatih\Marketplace;
 
-class Produk {
+trait Produk {
 
     //property
     private string $kode;
